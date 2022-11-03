@@ -1,0 +1,71 @@
+<html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=big5">
+    <title>新增網頁1</title>
+    <script language="JavaScript">
+
+        function findword() {
+            var queryString = location.search.replace("?", "");
+            var queryPair = new Array();    //存放 key 值的陣列
+            var valuePair = new Array();    // 存放 value 的陣列
+
+            var tmpQuery = queryString.split("&");
+            var tmpValue = new Array();
+            var count = (queryString.length > 0) ? tmpQuery.length : 0;
+
+            for (var i = 0; i < count; i++) {
+                tmpValue = tmpQueryIdea.split("=");
+                queryPairIdea = tmpValue[0];
+                valuePairIdea = unescape(tmpValue[1]);
+
+                var str = valuePairIdea;
+                var r = document.body.createTextRange();
+                if (r.findText(str)) {
+                    r.select();
+                }
+            }
+        }
+/* let content = $('#content').html();
+
+$('#search-btn').click(function () {
+
+    $('#content').html(content);
+
+    var searchText = $('#search').val();
+
+    if (searchText.length == 0) {
+
+        return false;
+
+    }
+
+    var regExp = new RegExp(searchText, 'g');
+
+    var newHtml = content.replace(regExp, '' + searchText + '');
+
+    $('#content').html(newHtml);
+
+    var X = $('#result').offset().top;
+
+    var Y = $('#result').offset().left;
+
+    window.scrollTo(X, Y);
+
+}); */
+    </script>
+
+
+</head>
+
+
+<body onload="findword();">
+    <p>
+        aa bb cc
+        http://localhost/aa/c.htm?find=cc
+    </p>
+</body>
+
+</html>

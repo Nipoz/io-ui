@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        width: 100px;
+        height: 300vh;
+        background-color: red;
+    }
+</style>
+<body>
+    <div></div>
+    <script>
+        const throttle = (fn, delay) => {
+            let valid = true;
+            return function () {
+                let context = this;
+                let args = arguments;
+                if (!valid) {
+                    return false;
+                }
+                valid = false;
+                setTimeout(() => {
+                    console.log('coming');
+                    //fn();
+                    fn.apply(context, args);
+                    valid = true;
+                }, delay);
+            };
+        };
+        window.onscroll = throttle(function(){
+            console.log(window.scrollY);
+        }, 1000);
+            
+        
+    </script>
+</body>
+</html>
